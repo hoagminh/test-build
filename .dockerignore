@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+.next
+out
+dist
+
+# Env files (mount hoặc inject lúc runtime)
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Dev tools
+.vscode
+.idea
+*.log
+*.md
+
+# OS
+.DS_Store
+Thumbs.db
