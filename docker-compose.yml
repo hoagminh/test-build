@@ -19,7 +19,7 @@ services:
       # env_file:
       #   - .env.production
     networks:
-      - dokploy_network
+      - dokploy-network
 
   # ── (Tuỳ chọn) Nginx Reverse Proxy ─────────────────────────
   # nginx:
@@ -37,5 +37,5 @@ services:
   #     - app_network
 
 networks:
-  dokploy_network:
+  dokploy-network:
     external: true
