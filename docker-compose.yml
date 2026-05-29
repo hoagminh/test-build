@@ -7,8 +7,11 @@ services:
       target: runner           # build tới stage cuối (production)
     container_name: nextjs_app
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    # ports:
+    #   - "3000:3000"
+    expose:
+      - "3000"
+
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
@@ -16,7 +19,7 @@ services:
       # env_file:
       #   - .env.production
     networks:
-      - app_network
+      - dokploy_network
 
   # ── (Tuỳ chọn) Nginx Reverse Proxy ─────────────────────────
   # nginx:
@@ -34,5 +37,5 @@ services:
   #     - app_network
 
 networks:
-  app_network:
-    driver: bridge
+  dokploy_network:
+    external: true
